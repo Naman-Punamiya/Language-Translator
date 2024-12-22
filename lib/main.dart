@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:language_translator/language_translation.dart';
-void main() {
+// import 'package:language_translator/onboarding_screen.dart';
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  await Hive.openBox('favorites');
   runApp(const MyApp());
 }
 
